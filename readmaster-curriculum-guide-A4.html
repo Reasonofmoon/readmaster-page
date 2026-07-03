@@ -1,0 +1,409 @@
+<!doctype html><html lang="ko"><head><meta charset='utf-8'><title>리드마스터학원 커리큘럼 가이드</title><style>
+/* ============ 기본 ============ */
+* { box-sizing: border-box; }
+@page { size: A4; margin: 12mm 12mm 10mm 12mm; }
+html,body { margin:0; padding:0; }
+body { font-family:"Segoe UI","Malgun Gothic","맑은 고딕",Arial,sans-serif; color:#1f2733; font-size:10.5px; line-height:1.55; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+/* ============ 화면 미리보기 (인쇄 시 제거) ============ */
+@media screen {
+  body { background:#e9edf3; padding:28px 0; }
+  .sheet { background:#fff; width:210mm; min-height:297mm; margin:0 auto 26px; padding:12mm 12mm 10mm; box-shadow:0 3px 16px rgba(18,50,91,.16); border-radius:2px; }
+}
+@media print {
+  .sheet { width:auto; min-height:0; margin:0; padding:0; box-shadow:none; border-radius:0; background:none; }
+}
+
+/* ============ 페이지 분할 ============ */
+.sheet { page-break-after: always; }
+.sheet:last-child { page-break-after: auto; }
+.box,.banner,.callout,.disc,.csat,.cta,table,.roadmap,.cols { page-break-inside: avoid; break-inside: avoid; }
+h2,h3,h4 { page-break-after: avoid; break-after: avoid; }
+p { orphans:2; widows:2; }
+
+/* ============ 커버 ============ */
+.cover-in { height:272mm; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+.cover-in .brand { font-size:13px; letter-spacing:4px; color:#e2231a; font-weight:700; }
+.cover-in h1 { font-size:46px; margin:10px 0 6px; color:#12325b; letter-spacing:-1px; }
+.cover-in .ed { font-size:14px; color:#1d4f8c; font-weight:700; letter-spacing:1px; }
+.cover-in .sub { color:#5b6b7f; font-size:12px; margin-top:6px; }
+.cover-in .rule { width:90px; height:4px; background:#e2231a; margin:20px 0; }
+.cover-in .slogan { margin-top:30px; font-size:17px; color:#12325b; font-weight:700; }
+.cover-in .slogan small { display:block; margin-top:6px; font-size:11px; color:#5b6b7f; font-weight:400; }
+.cover-in .foot { margin-top:38px; font-size:10.5px; color:#7c8aa0; line-height:1.8; }
+
+/* ============ 헤더 ============ */
+.hdr { display:flex; align-items:center; border-bottom:2px solid #12325b; padding-bottom:6px; margin-bottom:9px; }
+.hdr-l { font-size:16px; font-weight:800; color:#e2231a; white-space:nowrap; }
+.hdr-l span { color:#12325b; }
+.meta { flex:1; margin:0 14px; border-collapse:collapse; font-size:8.6px; color:#56657a; }
+.meta td { border:1px solid #d6deea; padding:2px 6px; }
+.meta td:nth-child(odd){ background:#f1f5fb; font-weight:600; color:#2b3a4f; width:52px; white-space:nowrap; }
+.pno { width:22px; height:22px; border-radius:50%; background:#12325b; color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:11px; flex-shrink:0; }
+
+/* ============ 배너 ============ */
+.banner { background:linear-gradient(135deg,#12325b,#1d4f8c); color:#fff; border-radius:8px; padding:10px 14px; display:flex; align-items:center; gap:14px; margin-bottom:9px; }
+.measure { font-size:10.5px; line-height:1.25; white-space:nowrap; }
+.measure b { font-size:19px; }
+.badge { background:#ffd84a; color:#7a5b00; font-size:7.6px; font-weight:800; padding:1px 5px; border-radius:3px; margin-left:6px; vertical-align:middle; }
+.result { flex:1; border-collapse:collapse; text-align:center; background:#fff; color:#1f2733; border-radius:6px; overflow:hidden; }
+.result th { background:#eaf0f8; color:#12325b; font-size:8.6px; padding:4.5px 4px; border:1px solid #cdd9e8; }
+.result td { padding:6px 4px; font-weight:700; border:1px solid #cdd9e8; font-size:10.5px; }
+
+/* ============ 로드맵 ============ */
+.roadmap { display:flex; align-items:center; gap:9px; margin-bottom:9px; }
+.rm-lbl { font-size:8.4px; font-weight:700; color:#12325b; width:62px; line-height:1.15; flex-shrink:0; }
+.rm-track { flex:1; display:flex; gap:4px; }
+.rm { flex:1; text-align:center; font-size:8.4px; padding:4.5px 0; background:#eef2f8; color:#7c8aa0; border-radius:4px; border:1px solid #e0e7f1; line-height:1.3; }
+.rm.on { background:#e2231a; color:#fff; font-weight:800; border-color:#e2231a; }
+
+/* ============ 타이포 ============ */
+h2 { color:#e2231a; font-size:13.5px; margin:3px 0 7px; border-bottom:1px solid #f0c9c6; padding-bottom:4px; }
+h2 small,h3 small,h4 small { color:#8a97a8; font-weight:600; font-size:0.8em; }
+h3 { color:#12325b; font-size:11px; margin:9px 0 2px; }
+h4 { color:#12325b; font-size:10.5px; margin:0 0 4px; }
+p { margin:0 0 2px; color:#2c3a4e; }
+p.kr { color:#465263; }
+.sm { font-size:9.8px; }
+
+/* ============ 레이아웃 ============ */
+.cols { display:flex; gap:10px; margin:6px 0; }
+.col { flex:1; min-width:0; }
+.box { background:#f7f9fc; border:1px solid #e4ebf4; border-radius:6px; padding:8px 10px; }
+
+/* ============ 칩 / 진행바 ============ */
+.chips { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:5px; }
+.chip { background:#fff; border:1px solid #cdd9e8; border-radius:13px; padding:2.5px 9px; font-size:9.2px; font-weight:600; color:#12325b; }
+.chip i { font-style:normal; color:#7c8aa0; margin-left:4px; font-weight:400; }
+.fnote { font-size:9px; color:#56657a; margin-top:3px; }
+.vc-bar { position:relative; background:#e6ecf5; border-radius:10px; height:17px; overflow:hidden; margin-bottom:5px; }
+.vc-fill { position:absolute; left:0; top:0; bottom:0; background:linear-gradient(90deg,#1d4f8c,#3a82d6); }
+.vc-num { position:absolute; right:8px; top:0; line-height:17px; font-size:9.4px; font-weight:800; color:#12325b; }
+
+/* ============ 목록 ============ */
+.routine { margin:0; padding-left:17px; font-size:9.8px; }
+.routine li,.goals li { margin-bottom:2.5px; }
+.routine i,.goals i { font-style:normal; color:#7c8aa0; margin-left:4px; font-size:0.9em; }
+.goals { list-style:none; margin:0; padding:0; font-size:9.8px; }
+.goals .ck { color:#1d4f8c; font-weight:700; margin-right:4px; }
+
+/* ============ 테이블 ============ */
+.books { width:100%; border-collapse:collapse; margin-top:5px; font-size:9.8px; }
+.books th { background:#12325b; color:#fff; text-align:left; padding:4.5px 8px; }
+.books td { border-bottom:1px solid #e3e9f2; padding:4.5px 8px; }
+.books tr:nth-child(even) td { background:#f6f8fc; }
+.books .bt { font-weight:600; }
+.books .bl { text-align:right; font-weight:700; color:#1d4f8c; white-space:nowrap; }
+.sumtbl { width:100%; border-collapse:collapse; margin-top:6px; font-size:9.6px; }
+.sumtbl th { background:#12325b; color:#fff; padding:5px 7px; text-align:left; }
+.sumtbl td { border-bottom:1px solid #e3e9f2; padding:4.5px 7px; }
+.sumtbl tr:nth-child(even) td { background:#f6f8fc; }
+.sumtbl .lx { font-weight:700; color:#12325b; white-space:nowrap; }
+
+/* ============ 콜아웃 ============ */
+.note { font-size:8.6px; color:#7a8699; margin-top:5px; font-style:italic; }
+.disc { background:#fff7ed; border:1px solid #f3d9b0; border-radius:6px; padding:9px 11px; font-size:9.4px; color:#6b4f2a; margin-top:9px; line-height:1.6; }
+.csat { background:#fff4f3; border:1px solid #f3c9c4; border-left:4px solid #e2231a; border-radius:6px; padding:5px 10px; font-size:9.2px; color:#7a2018; margin:-1px 0 9px; }
+.csat b { color:#e2231a; font-size:10.5px; }
+.csat .en { color:#9a4b43; font-weight:600; }
+.callout { border-radius:6px; padding:8px 11px; font-size:9.4px; margin-top:8px; line-height:1.6; }
+.callout b { font-size:10.5px; }
+.callout .kr { display:block; margin-top:3px; }
+.c-mile { background:#eef6ff; border:1px solid #bcd6f3; border-left:4px solid #1d4f8c; color:#163a5f; }
+.c-grow { background:#f0faf2; border:1px solid #bfe3c8; border-left:4px solid #2f9e54; color:#1f5e35; }
+
+/* ============ CTA ============ */
+.cta { background:linear-gradient(135deg,#12325b,#1d4f8c); color:#fff; border-radius:8px; padding:14px 18px; margin-top:11px; text-align:center; }
+.cta b { font-size:14.5px; display:block; margin-bottom:4px; }
+.cta .sub2 { font-size:10px; color:#cdd9e8; }
+.cta .btn { display:inline-block; margin-top:8px; background:#e2231a; color:#fff; font-weight:800; font-size:11px; padding:6px 22px; border-radius:18px; }
+</style></head><body>
+
+<!-- ===================== COVER ===================== -->
+<div class="sheet"><div class="cover-in">
+  <div class="brand">READ MASTER ACADEMY</div>
+  <h1>커리큘럼 가이드</h1>
+  <div class="ed">Curriculum Guide · 초등부터 고등까지 문해력 성장 로드맵</div>
+  <div class="rule"></div>
+  <div class="sub">Reading Diagnosis · Level-Based Curriculum · KR/EN Integrated Reading · Monthly Growth Record</div>
+  <div class="slogan">"감으로 읽지 않습니다. 데이터로 읽습니다."<small>모든 공부는 읽기에서 시작됩니다 — 리드마스터학원</small></div>
+  <div class="foot">경기도 부천시 옥길동 · 2026년 8월 1일 개원<br>국어·영어 통합 문해력 전문</div>
+</div></div>
+
+<!-- ===================== PAGE i ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>학원</td><td>리드마스터학원</td><td>지역</td><td>부천 옥길동</td></tr><tr><td>대상</td><td>초1 ~ 고3</td><td>개원</td><td>2026. 8. 1</td></tr></table><div class="pno">i</div></div>
+  <h2>이 가이드를 읽는 법 &nbsp;<small>How to Read This Guide</small></h2>
+  <div class="cols">
+   <div class="col box"><h4>문해력 진단 <small>Literacy Diagnosis</small></h4><p class="sm">모든 수업은 진단에서 시작합니다. 입학 시 문해력 진단평가로 아이의 현재 읽기 수준을 영역별로 측정하고, 학년이 아닌 <b>문해력 레벨</b>에 맞춰 과정을 배정합니다.</p></div>
+   <div class="col box"><h4>성장 로드맵 <small>Growth Roadmap</small></h4><p class="sm">초등 READ START부터 고등 READ MASTER까지 4단계 로드맵입니다. 각 단계는 이전 단계의 읽기 근력 위에 쌓이며, 최종 목표는 수능·내신에서 통하는 실전 독해력입니다.</p></div>
+  </div>
+  <div class="cols">
+   <div class="col box"><h4>월간 성장 기록 <small>Monthly Record</small></h4><p class="sm">매월 레벨 변화를 기록하고 그래프로 정리해 학부모님께 전달합니다. 좋아졌는지 아닌지를 느낌이 아니라 <b>데이터</b>로 확인하실 수 있습니다.</p></div>
+   <div class="col box"><h4>국영 통합 리딩 <small>KR/EN Integrated</small></h4><p class="sm">언어가 달라도 글을 읽는 논리는 하나입니다. 국어의 깊이와 영어의 넓이를 같은 읽기 훈련 체계 안에서 함께 키웁니다.</p></div>
+  </div>
+
+  <h2 style="margin-top:12px;">교육 철학 &nbsp;<small>Our Principle</small></h2>
+  <div class="callout c-mile"><b>스스로 읽는 힘이, 스스로 배우는 힘이 됩니다.</b><span class="kr">모든 과목의 성적은 문해력에서 출발합니다. 리드마스터는 떠먹여 주는 수업이 아니라, 아이가 스스로 질문하고 해답을 찾는 '읽는 방법'을 훈련합니다. 한 번 갖춘 읽기 능력은 국어와 영어를 넘어 모든 과목으로 번집니다.</span></div>
+
+  <h3 style="margin-top:11px;">전체 성장 로드맵 <small>4 Stages</small></h3>
+  <div class="roadmap" style="margin-top:5px;"><div class="rm-lbl">Reading Growth Roadmap</div><div class="rm-track"><div class="rm on">READ START<br>초등 1–3</div><div class="rm on" style="background:#1d4f8c;border-color:#1d4f8c;">READ BUILD<br>초등 4–6</div><div class="rm on" style="background:#12325b;border-color:#12325b;">READ LOGIC<br>중등</div><div class="rm on" style="background:#0b2140;border-color:#0b2140;">READ MASTER<br>고등</div></div></div>
+
+  <table class="sumtbl">
+    <tr><th>단계</th><th>대상</th><th>핵심 목표</th><th>훈련 축</th></tr>
+    <tr><td class="lx">1 · READ START</td><td>초등 1–3학년</td><td>읽기 습관과 기초 읽기 근력</td><td>소리 내어 읽기 · 기초 어휘 · 이야기 구조</td></tr>
+    <tr><td class="lx">2 · READ BUILD</td><td>초등 4–6학년</td><td>흥미 독서에서 전략적 읽기로 전환</td><td>요약 · 구조 파악 · 영어 다독 시작</td></tr>
+    <tr><td class="lx">3 · READ LOGIC</td><td>중등 1–3학년</td><td>비문학·논리 독해와 국영 통합</td><td>논증 구조 · 크리티컬 리딩 · 서술형 쓰기</td></tr>
+    <tr><td class="lx">4 · READ MASTER</td><td>고등 1–3학년</td><td>수능·내신 실전 독해 완성</td><td>고난도 지문 · 시간 전략 · 실전 훈련</td></tr>
+  </table>
+
+  <div class="disc"><b>안내:</b> 배정 단계는 학년이 아니라 입학 진단 결과의 문해력 레벨을 기준으로 합니다. 같은 학년이라도 시작 단계가 다를 수 있으며, 이는 아이에게 맞는 속도로 확실하게 성장시키기 위한 배정입니다. 세부 커리큘럼·교재는 진단 결과에 따라 조정됩니다.</div>
+</div>
+
+<!-- ===================== PAGE 1 : READ START ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>과정</td><td>READ START</td><td>대상</td><td>초등 1–3학년</td></tr><tr><td>수업</td><td>주 2회 · 회당 [○○]분</td><td>정원</td><td>[○]명 소수정예</td></tr></table><div class="pno">1</div></div>
+  <div class="banner">
+    <div class="measure">Stage 1<br><b>READ START</b></div>
+    <table class="result">
+      <tr><th>대상</th><th>핵심 목표</th><th>수업 언어</th><th>월간 리포트</th></tr>
+      <tr><td>초등 1–3</td><td>읽기 습관 · 기초 근력</td><td>국어 중심 + 영어 기초</td><td>레벨 기록 제공</td></tr>
+    </table>
+  </div>
+  <div class="roadmap"><div class="rm-lbl">Growth Roadmap</div><div class="rm-track"><div class="rm on">READ START</div><div class="rm">READ BUILD</div><div class="rm">READ LOGIC</div><div class="rm">READ MASTER</div></div></div>
+  <div class="csat">🎯 <span class="en">이 단계의 한 문장</span> · <b>"읽기가 즐거운 아이가, 끝까지 읽는 아이가 됩니다."</b> · 습관이 실력보다 먼저입니다</div>
+
+  <h2>어떤 단계인가요? &nbsp;<small>About This Stage</small></h2>
+  <p class="kr">글자를 읽는 것을 넘어 <b>글을 즐겨 읽는 습관</b>을 만드는 단계입니다. 소리 내어 읽기와 반복 읽기로 기초 읽기 근력을 기르고, 짧은 글을 끝까지 읽어내는 완독 경험을 쌓습니다. 이 시기의 바른 읽기 습관이 이후 모든 단계의 뼈대가 됩니다.</p>
+
+  <h3>학부모 가이드 <small>Parent Guide</small></h3>
+  <p class="kr">이 단계에서는 진도보다 습관이 중요합니다. 집에서는 하루 10–15분, 아이가 고른 책을 함께 읽고 이야기 나눠 주세요. 점수보다 "끝까지 읽었네!"라는 완독 칭찬이 아이를 읽는 사람으로 만듭니다.</p>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>이 단계에서 발달하는 능력 <small>Development Focus</small></h4>
+      <div class="chips"><span class="chip">소리 내어 읽기<i>Fluency</i></span><span class="chip">기초 어휘<i>Vocabulary</i></span><span class="chip">이야기 구조<i>Story Structure</i></span><span class="chip">완독 습관<i>Reading Habit</i></span></div>
+      <div class="fnote">읽기가 자동화되면 '읽기를 배우는' 단계에서 '읽으며 배우는' 단계로 나아갑니다.</div>
+    </div>
+    <div class="col box">
+      <h4>진단·기록 <small>Diagnosis & Record</small></h4>
+      <div class="vc-bar"><div class="vc-fill" style="width:25%"></div><div class="vc-num">Stage 1 / 4</div></div>
+      <p class="sm kr">입학 진단으로 시작 레벨을 정하고, <b>매월 읽기 레벨 변화를 기록</b>해 전달합니다. 아이의 성장을 데이터로 확인하세요.</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>주간 수업 루틴 <small>Weekly Routine</small></h4>
+      <ol class="routine"><li>함께 읽기 · 소리 내어 읽기<i>Read Aloud</i></li><li>어휘 놀이·문장 만들기<i>Vocabulary</i></li><li>이야기 다시 말하기<i>Retelling</i></li><li>짧은 글 완독 도전<i>Finish a Book</i></li><li>월 1회 레벨 점검<i>Monthly Check</i></li></ol>
+    </div>
+    <div class="col box">
+      <h4>이 단계의 졸업 목표 <small>Stage Goals</small></h4>
+      <ul class="goals"><li><span class="ck">☐</span> 또래 수준의 글을 소리 내어 유창하게 읽기</li><li><span class="ck">☐</span> 짧은 책을 혼자 끝까지 완독하기</li><li><span class="ck">☐</span> 읽은 이야기를 처음–중간–끝으로 말하기</li><li><span class="ck">☐</span> 매일 읽는 습관 만들기</li></ul>
+    </div>
+  </div>
+
+  <h3>수업 구성 <small>Modules</small></h3>
+  <table class="books"><tr><th>모듈</th><th>내용</th><th>비중</th></tr>
+    <tr><td class="bt">바른 소리 읽기</td><td>소리 내어 읽기 · 유창성 훈련</td><td class="bl">30%</td></tr>
+    <tr><td class="bt">어휘의 뿌리</td><td>기초 어휘 · 낱말–문장 연결</td><td class="bl">25%</td></tr>
+    <tr><td class="bt">이야기 읽기</td><td>완독 훈련 · 이야기 구조 익히기</td><td class="bl">30%</td></tr>
+    <tr><td class="bt">영어 첫 읽기</td><td>영어 그림책 소리·패턴 노출</td><td class="bl">15%</td></tr>
+  </table>
+  <div class="note">* 모듈 비중은 진단 결과와 아이의 발달 속도에 따라 조정됩니다.</div>
+</div>
+
+<!-- ===================== PAGE 2 : READ BUILD ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>과정</td><td>READ BUILD</td><td>대상</td><td>초등 4–6학년</td></tr><tr><td>수업</td><td>주 2회 · 회당 [○○]분</td><td>정원</td><td>[○]명 소수정예</td></tr></table><div class="pno">2</div></div>
+  <div class="banner">
+    <div class="measure">Stage 2<br><b>READ BUILD</b></div>
+    <table class="result">
+      <tr><th>대상</th><th>핵심 목표</th><th>수업 언어</th><th>월간 리포트</th></tr>
+      <tr><td>초등 4–6</td><td>전략적 읽기 전환</td><td>국어 + 영어 다독</td><td>레벨 기록 제공</td></tr>
+    </table>
+  </div>
+  <div class="roadmap"><div class="rm-lbl">Growth Roadmap</div><div class="rm-track"><div class="rm">READ START</div><div class="rm on">READ BUILD</div><div class="rm">READ LOGIC</div><div class="rm">READ MASTER</div></div></div>
+  <div class="csat">🎯 <span class="en">이 단계의 한 문장</span> · <b>"단순한 독서가 아닌, 전략적 읽기의 시작."</b> · 흥미 독서에서 공부가 되는 읽기로</div>
+
+  <h2>어떤 단계인가요? &nbsp;<small>About This Stage</small></h2>
+  <p class="kr">읽는 양을 넘어 <b>읽는 방법</b>을 배우는 단계입니다. 글의 중심 내용을 찾고, 문단의 구조를 파악하고, 읽은 내용을 한두 문장으로 요약하는 훈련을 시작합니다. 영어는 수준에 맞는 다독으로 '해석하지 않고 읽는' 감각을 만듭니다. 중등 비문학이 시작되기 전, 반드시 갖춰야 할 읽기 전환기입니다.</p>
+
+  <h3>학부모 가이드 <small>Parent Guide</small></h3>
+  <p class="kr">"책은 많이 읽는데 성적으로 이어지지 않는다"는 고민이 가장 많이 나오는 시기입니다. 원인은 독서량이 아니라 읽기 전략의 부재입니다. 이 단계에서 요약·구조 파악 습관을 잡으면 중등 이후의 격차가 달라집니다.</p>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>이 단계에서 발달하는 능력 <small>Development Focus</small></h4>
+      <div class="chips"><span class="chip">중심 내용 찾기<i>Main Idea</i></span><span class="chip">요약<i>Summarizing</i></span><span class="chip">문단 구조<i>Structure</i></span><span class="chip">영어 다독<i>Extensive Reading</i></span></div>
+      <div class="fnote">요약할 수 있어야 이해한 것입니다. 요약은 이 단계 훈련의 중심입니다.</div>
+    </div>
+    <div class="col box">
+      <h4>진단·기록 <small>Diagnosis & Record</small></h4>
+      <div class="vc-bar"><div class="vc-fill" style="width:50%"></div><div class="vc-num">Stage 2 / 4</div></div>
+      <p class="sm kr">국어·영어 읽기 레벨을 각각 측정하고, <b>매월 두 언어의 성장 그래프</b>를 함께 전달합니다.</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>주간 수업 루틴 <small>Weekly Routine</small></h4>
+      <ol class="routine"><li>지문 정독 · 중심 문장 찾기<i>Close Reading</i></li><li>문단 구조 그리기<i>Mapping</i></li><li>한 문장 요약 쓰기<i>Summary</i></li><li>영어 레벨 다독 + 낭독<i>EN Reading</i></li><li>월 1회 레벨 점검<i>Monthly Check</i></li></ol>
+    </div>
+    <div class="col box">
+      <h4>이 단계의 졸업 목표 <small>Stage Goals</small></h4>
+      <ul class="goals"><li><span class="ck">☐</span> 낯선 글에서 중심 내용을 스스로 찾기</li><li><span class="ck">☐</span> 읽은 글을 1–2문장으로 요약하기</li><li><span class="ck">☐</span> 설명문·이야기의 구조를 구분해 읽기</li><li><span class="ck">☐</span> 영어 챕터북을 해석 없이 즐겨 읽기</li></ul>
+    </div>
+  </div>
+
+  <h3>수업 구성 <small>Modules</small></h3>
+  <table class="books"><tr><th>모듈</th><th>내용</th><th>비중</th></tr>
+    <tr><td class="bt">전략 독해</td><td>중심 내용 · 문단 구조 · 갈래별 읽기</td><td class="bl">35%</td></tr>
+    <tr><td class="bt">요약과 쓰기</td><td>요약문 쓰기 · 생각 정리 글쓰기</td><td class="bl">25%</td></tr>
+    <tr><td class="bt">영어 다독</td><td>레벨 도서 다독 · 낭독 · 어휘 확장</td><td class="bl">30%</td></tr>
+    <tr><td class="bt">어휘·배경지식</td><td>교과 연계 어휘 · 비문학 배경지식</td><td class="bl">10%</td></tr>
+  </table>
+  <div class="note">* 모듈 비중은 진단 결과와 아이의 발달 속도에 따라 조정됩니다.</div>
+</div>
+
+<!-- ===================== PAGE 3 : READ LOGIC ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>과정</td><td>READ LOGIC</td><td>대상</td><td>중등 1–3학년</td></tr><tr><td>수업</td><td>주 2회 · 회당 [○○]분</td><td>정원</td><td>[○]명 소수정예</td></tr></table><div class="pno">3</div></div>
+  <div class="banner">
+    <div class="measure">Stage 3<br><b>READ LOGIC</b></div>
+    <table class="result">
+      <tr><th>대상</th><th>핵심 목표</th><th>수업 언어</th><th>월간 리포트</th></tr>
+      <tr><td>중등 1–3</td><td>논리 독해 · 국영 통합</td><td>국어 · 영어 통합</td><td>레벨 기록 제공</td></tr>
+    </table>
+  </div>
+  <div class="roadmap"><div class="rm-lbl">Growth Roadmap</div><div class="rm-track"><div class="rm">READ START</div><div class="rm">READ BUILD</div><div class="rm on">READ LOGIC</div><div class="rm">READ MASTER</div></div></div>
+  <div class="csat">🎯 <span class="en">이 단계의 한 문장</span> · <b>"언어가 달라도 논리의 뼈대는 하나입니다."</b> · 국어와 영어를 같은 읽기 논리로</div>
+
+  <h2>어떤 단계인가요? &nbsp;<small>About This Stage</small></h2>
+  <p class="kr">비문학이 본격화되는 시기, <b>글의 논리 구조를 읽는 힘</b>을 기르는 단계입니다. 주장–근거, 원인–결과, 비교–대조 같은 논증 구조를 국어와 영어 지문에서 동일하게 훈련합니다. 같은 논리를 두 언어로 읽으면 이해가 두 배로 단단해지고, 영어 지문도 번역이 아닌 구조로 읽게 됩니다. 내신 서술형과 수능형 문제의 기초를 여기서 완성합니다.</p>
+
+  <h3>학부모 가이드 <small>Parent Guide</small></h3>
+  <p class="kr">"영어는 되는데 국어 비문학에서 막힌다", 또는 그 반대의 고민이 나오는 시기입니다. 두 과목의 원인은 같습니다 — 논리 구조를 읽는 훈련의 부재입니다. 과목을 나누어 각각 보완하는 것보다, 읽기 논리를 한 번에 잡는 것이 빠르고 오래갑니다.</p>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>이 단계에서 발달하는 능력 <small>Development Focus</small></h4>
+      <div class="chips"><span class="chip">논증 구조 분석<i>Argument</i></span><span class="chip">추론<i>Inference</i></span><span class="chip">크리티컬 리딩<i>Critical Reading</i></span><span class="chip">서술형 쓰기<i>Writing</i></span></div>
+      <div class="fnote">단순 번역을 넘어선 크리티컬 리딩 — 글쓴이의 의도와 논리를 따져 읽습니다.</div>
+    </div>
+    <div class="col box">
+      <h4>진단·기록 <small>Diagnosis & Record</small></h4>
+      <div class="vc-bar"><div class="vc-fill" style="width:75%"></div><div class="vc-num">Stage 3 / 4</div></div>
+      <p class="sm kr">영역별(사실 파악·추론·구조 분석) 정답률을 기록해 <b>약점 영역을 데이터로</b> 짚고 보완합니다.</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>주간 수업 루틴 <small>Weekly Routine</small></h4>
+      <ol class="routine"><li>비문학 지문 구조 분석<i>KR Nonfiction</i></li><li>같은 논리의 영어 지문 독해<i>EN Parallel</i></li><li>논증 요약 · 반박 써보기<i>Writing</i></li><li>내신·수능형 문항 적용<i>Application</i></li><li>월 1회 영역별 레벨 점검<i>Monthly Check</i></li></ol>
+    </div>
+    <div class="col box">
+      <h4>이 단계의 졸업 목표 <small>Stage Goals</small></h4>
+      <ul class="goals"><li><span class="ck">☐</span> 비문학 지문의 논증 구조를 도식으로 그리기</li><li><span class="ck">☐</span> 영어 지문을 구조 단위로 끊어 읽기</li><li><span class="ck">☐</span> 근거를 들어 서술형 답안 완성하기</li><li><span class="ck">☐</span> 낯선 주제의 글도 두려움 없이 읽기</li></ul>
+    </div>
+  </div>
+
+  <h3>수업 구성 <small>Modules</small></h3>
+  <table class="books"><tr><th>모듈</th><th>내용</th><th>비중</th></tr>
+    <tr><td class="bt">논리 독해</td><td>비문학 논증 구조 · 갈래별 독해 전략</td><td class="bl">35%</td></tr>
+    <tr><td class="bt">국영 통합 리딩</td><td>같은 논리의 국·영 지문 병렬 훈련</td><td class="bl">30%</td></tr>
+    <tr><td class="bt">서술형 쓰기</td><td>요약 · 논술형 답안 · 근거 쓰기</td><td class="bl">20%</td></tr>
+    <tr><td class="bt">실전 적용</td><td>내신·수능형 문항 풀이와 오답 분석</td><td class="bl">15%</td></tr>
+  </table>
+  <div class="note">* 모듈 비중은 진단 결과와 학교 시험 일정에 따라 조정됩니다.</div>
+</div>
+
+<!-- ===================== PAGE 4 : READ MASTER ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>과정</td><td>READ MASTER</td><td>대상</td><td>고등 1–3학년</td></tr><tr><td>수업</td><td>주 2회 · 회당 [○○]분</td><td>정원</td><td>[○]명 소수정예</td></tr></table><div class="pno">4</div></div>
+  <div class="banner">
+    <div class="measure">Stage 4<br><b>READ MASTER</b><span class="badge">FINAL</span></div>
+    <table class="result">
+      <tr><th>대상</th><th>핵심 목표</th><th>수업 언어</th><th>월간 리포트</th></tr>
+      <tr><td>고등 1–3</td><td>수능·내신 실전 독해</td><td>국어 · 영어 통합</td><td>레벨 기록 제공</td></tr>
+    </table>
+  </div>
+  <div class="roadmap"><div class="rm-lbl">Growth Roadmap</div><div class="rm-track"><div class="rm">READ START</div><div class="rm">READ BUILD</div><div class="rm">READ LOGIC</div><div class="rm on">READ MASTER</div></div></div>
+  <div class="csat">🎯 <span class="en">이 단계의 한 문장</span> · <b>"어떤 지문이 나와도 당황하지 않는 실전 최적화 리딩."</b> · 읽는 힘을 점수로 완성하는 단계</div>
+
+  <h2>어떤 단계인가요? &nbsp;<small>About This Stage</small></h2>
+  <p class="kr">쌓아온 읽기 근력을 <b>시험장에서 통하는 실전 독해</b>로 완성하는 단계입니다. 고난도 지문을 제한 시간 안에 구조로 읽어내는 훈련, 선지 판단의 근거를 지문에서 찾는 훈련, 국어 비문학과 영어 빈칸·순서 유형을 같은 논리로 공략하는 훈련을 진행합니다. 감으로 찍는 풀이가 아니라, 근거로 답하는 독해를 만듭니다.</p>
+
+  <h3>학부모 가이드 <small>Parent Guide</small></h3>
+  <p class="kr">고등에서 문해력은 국어·영어만의 문제가 아닙니다. 탐구 과목의 자료 해석, 수학의 긴 문장제까지 읽는 힘이 좌우합니다. 이 단계의 목표는 시험 기술이 아니라, 어떤 지문 앞에서도 흔들리지 않는 읽기 체력을 점수로 연결하는 것입니다.</p>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>이 단계에서 발달하는 능력 <small>Development Focus</small></h4>
+      <div class="chips"><span class="chip">고난도 지문 독해<i>Advanced</i></span><span class="chip">시간 관리 전략<i>Timing</i></span><span class="chip">근거 기반 선지 판단<i>Evidence</i></span><span class="chip">실전 감각<i>Test Ready</i></span></div>
+      <div class="fnote">고난도 문항은 결국 읽기 문제입니다. 압박 속에서도 구조로 읽으면 흔들리지 않습니다.</div>
+    </div>
+    <div class="col box">
+      <h4>진단·기록 <small>Diagnosis & Record</small></h4>
+      <div class="vc-bar"><div class="vc-fill" style="width:100%"></div><div class="vc-num">Stage 4 / 4</div></div>
+      <p class="sm kr">유형별 정답률·풀이 시간을 기록해 <b>취약 유형을 데이터로 관리</b>하고, 시험 직전까지 보완합니다.</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col box">
+      <h4>주간 수업 루틴 <small>Weekly Routine</small></h4>
+      <ol class="routine"><li>고난도 지문 구조 독해<i>Advanced Reading</i></li><li>기출 유형 실전 풀이<i>Practice</i></li><li>오답의 근거 복기<i>Review</i></li><li>국·영 병렬 시간 훈련<i>Timed Training</i></li><li>월 1회 유형별 데이터 점검<i>Monthly Check</i></li></ol>
+    </div>
+    <div class="col box">
+      <h4>이 단계의 졸업 목표 <small>Stage Goals</small></h4>
+      <ul class="goals"><li><span class="ck">☐</span> 고난도 지문을 제한 시간 내 구조로 독해</li><li><span class="ck">☐</span> 모든 선지 판단에 지문 근거 제시</li><li><span class="ck">☐</span> 국어·영어 취약 유형 데이터로 보완 완료</li><li><span class="ck">☐</span> 시험장에서 흔들리지 않는 읽기 루틴 완성</li></ul>
+    </div>
+  </div>
+
+  <h3>수업 구성 <small>Modules</small></h3>
+  <table class="books"><tr><th>모듈</th><th>내용</th><th>비중</th></tr>
+    <tr><td class="bt">실전 독해</td><td>수능·내신 고난도 지문 구조 독해</td><td class="bl">35%</td></tr>
+    <tr><td class="bt">유형 공략</td><td>기출 유형별 전략 · 시간 관리</td><td class="bl">30%</td></tr>
+    <tr><td class="bt">오답 데이터 관리</td><td>유형별 정답률 기록 · 취약점 보완</td><td class="bl">20%</td></tr>
+    <tr><td class="bt">국영 병렬 훈련</td><td>같은 논리 구조의 국·영 지문 교차 독해</td><td class="bl">15%</td></tr>
+  </table>
+  <div class="note">* 모듈 비중은 진단 결과와 학교 시험 일정에 따라 조정됩니다.</div>
+</div>
+
+<!-- ===================== PAGE 5 : 진단 안내 & 등록 ===================== -->
+<div class="sheet">
+  <div class="hdr"><div class="hdr-l">Read Master <span>Curriculum Guide</span></div><table class="meta"><tr><td>학원</td><td>리드마스터학원</td><td>지역</td><td>부천 옥길동</td></tr><tr><td>상담</td><td>[전화번호]</td><td>개원</td><td>2026. 8. 1</td></tr></table><div class="pno">5</div></div>
+
+  <h2>입학은 진단에서 시작합니다 &nbsp;<small>Start with Diagnosis</small></h2>
+  <p class="kr">리드마스터의 모든 아이는 같은 출발선이 아니라, <b>자기 레벨의 출발선</b>에서 시작합니다. 입학 전 문해력 진단평가로 현재 읽기 수준을 영역별로 측정하고, 결과를 학부모님께 1:1로 설명해 드립니다.</p>
+
+  <div class="cols" style="margin-top:8px;">
+    <div class="col box"><h4>STEP 1 · 진단 <small>Diagnosis</small></h4><p class="sm kr">문해력 진단평가로 현재 레벨과 강·약점 영역을 측정합니다.</p></div>
+    <div class="col box"><h4>STEP 2 · 설계 <small>Placement</small></h4><p class="sm kr">레벨에 맞는 단계 배정과 개인별 커리큘럼을 설계합니다.</p></div>
+    <div class="col box"><h4>STEP 3 · 추적 <small>Tracking</small></h4><p class="sm kr">매월 레벨 변화를 기록·그래프로 전달하며 과정을 조정합니다.</p></div>
+  </div>
+
+  <div class="callout c-grow"><b>등록 여부와 관계없이, 진단 결과는 자세히 설명해 드립니다.</b><span class="kr">우리 아이가 지금 어느 지점에 있는지 확인하는 것만으로도 의미 있는 시작입니다.</span></div>
+
+  <h3 style="margin-top:12px;">자주 묻는 질문 <small>FAQ</small></h3>
+  <div class="cols">
+    <div class="col box"><h4>Q. 독서는 집에서도 되지 않나요?</h4><p class="sm kr">흥미 위주의 독서와 입시에서 통하는 전략적 읽기는 다릅니다. 리드마스터는 '읽는 방법'을 훈련합니다.</p></div>
+    <div class="col box"><h4>Q. 효과를 어떻게 확인하죠?</h4><p class="sm kr">매달 레벨이 숫자와 그래프로 기록됩니다. 느낌이 아니라 데이터로 성장을 확인하실 수 있습니다.</p></div>
+  </div>
+  <div class="cols">
+    <div class="col box"><h4>Q. 우리 아이에겐 이른가요?</h4><p class="sm kr">초등의 바른 읽기가 고등 독해의 뼈대가 됩니다. 읽기 훈련은 빠를수록 유리합니다.</p></div>
+    <div class="col box"><h4>Q. 국어·영어를 왜 같이 하나요?</h4><p class="sm kr">언어가 달라도 글을 읽는 논리는 하나입니다. 한 번의 훈련이 두 과목의 힘이 됩니다.</p></div>
+  </div>
+
+  <div class="cta">
+    <b>우리 아이 문해력, 지금 몇 점인지 아세요?</b>
+    <div class="sub2">개원 기념 무료 문해력 진단 · 선착순 [○○]명 · 1:1 결과 상담 포함</div>
+    <div class="btn">무료 문해력 진단 신청 ☎ [전화번호]</div>
+  </div>
+
+  <div class="disc" style="margin-top:10px;"><b>안내:</b> 본 자료의 커리큘럼·모듈 비중은 표준안이며, 개별 진단 결과에 따라 조정됩니다. 수강료·시간표 등 상세 안내는 상담 시 제공됩니다. 리드마스터학원 · 경기도 부천시 옥길동 [상세주소] · 2026년 8월 1일 개원</div>
+</div>
+
+</body></html>
