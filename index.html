@@ -723,21 +723,45 @@
   </div>
 
   <script>
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyBG2MdFRt0lHOZd2IChJoAS7Pj9O1TF1Ty0lrX53VqRnXdJNR4SmhhOssMFIOo1aLJ/exec";
     const form = document.querySelector("#reservation");
     const message = document.querySelector("#formMessage");
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
 
       const data = Object.fromEntries(new FormData(form).entries());
+      const payload = {
+        ...data,
+        page: location.href,
+        userAgent: navigator.userAgent,
+        submittedAt: new Date().toISOString()
+      };
       const saved = JSON.parse(localStorage.getItem("readmaster-reservations") || "[]");
-      saved.push({ ...data, createdAt: new Date().toISOString() });
+      saved.push(payload);
       localStorage.setItem("readmaster-reservations", JSON.stringify(saved));
 
-      message.textContent = "예약 신청이 임시 저장되었습니다. 실제 운영 시 GAS 또는 CRM 제출 주소만 연결하면 됩니다.";
-      message.classList.add("show");
-      form.reset();
+      if (!GAS_ENDPOINT) {
+        message.textContent = "GAS 공개 접근이 아직 열리지 않아 시트 저장은 비활성화되어 있습니다. 입력 내용은 이 브라우저에 백업 저장되었습니다.";
+        message.classList.add("show");
+        return;
+      }
+
+      try {
+        await fetch(GAS_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        message.textContent = "예약 신청이 접수되었습니다. 담당자가 확인 후 연락드립니다.";
+        message.classList.add("show");
+        form.reset();
+      } catch (error) {
+        message.textContent = "전송 중 문제가 생겼습니다. 입력 내용은 이 브라우저에 백업 저장되었습니다. 010-3368-7873으로 문의해 주세요.";
+        message.classList.add("show");
+      }
     });
   </script>
 </body>

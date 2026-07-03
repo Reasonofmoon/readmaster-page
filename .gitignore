@@ -8,3 +8,4 @@ readmaster-funnel-promo.html
 
 # Local Netlify folder
 .netlify
+.clasp.json
