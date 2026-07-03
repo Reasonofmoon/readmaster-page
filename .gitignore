@@ -5,3 +5,6 @@ planning-package/
 tools/
 CLAUDE.md
 readmaster-funnel-promo.html
+
+# Local Netlify folder
+.netlify
